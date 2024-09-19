@@ -40,7 +40,7 @@ app.get("/api/:date", function(req, res) {
     const utcFormat = new Date(input).toUTCString();
     res.json({ unix: unixTimestamp, utc: utcFormat });
   } else {
-    const timestamp = !isNaN(input) ? parseInt(input) * 1000 : input;
+    const timestamp = !isNaN(input) ? parseInt(input) : input;
 
     const date = new Date(timestamp);
 
